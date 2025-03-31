@@ -13,7 +13,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view (view: 'posts');
+        return view ('posts/index',[ 'posts'=> Post::with('user')->latest()->get(),
+        ]);
 
     }
 
@@ -24,13 +25,25 @@ class PostController extends Controller
     public function store(Request $request)
     {
       //  $message =  request('message');
-      $request->validate([
-        'message'=> ['required', 'min:8'],
-      ]);
-        Post::create([ 
-          'message'=> $request->get('message'),
-            'user_id' => auth()->id(),
-        ]);
+      $dataValidates= $request->validate([
+     'message'=> ['required', 'min:8', 'max:255'],
+    ]);
+    //     Post::create([ 
+    //       'message'=> $request->get('message'),
+    //         'user_id' => auth()->id(),
+    //     ]);
+
+
+    //Generar un registro a atraves de una relacion hasmany
+    // Primero accediendo al user desde el rquest, luego a post desde user y finalmente
+    //  a create desde post, ahora solo pasar los datos
+
+//OTRA FORMA DE INSERCION
+    // @dump($dataValidates);
+    // $request->user()->posts()->create([
+    //     'message' => $request->get('message')
+    // ]);
+    $request->user()->posts()->create($dataValidates);
         return to_route('posts.index')->with('status',_('Post created sucessfully!'));
     }
 
@@ -47,6 +60,17 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
+
+        // if(auth()->user()->id !=$post->user_id){
+        //     abort(403);
+        // }
+        
+        //return view ('posts/edit', compact('post'));
+        $this->authorize('update',$post);
+        return view('posts/edit',[
+            'post'=> $post,
+        ]);
+        
         //
     }
 
@@ -55,7 +79,14 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $this->authorize('update',$post);
+        $dataValidates = $request->validate([
+            'message'=>['required','min:8','max:255'],
+        ]);
+        $post->UPDATE($dataValidates);
+
+        return to_route('posts.index')->with('status',_('Post update sucessfully'));
+
     }
 
     /**
@@ -63,6 +94,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $this->authorize('delete',$post);
+        $post->delete();
+        return to_route('posts.index')->with('status',__('Post delete sucessfully'));
     }
 }

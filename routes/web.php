@@ -58,6 +58,12 @@ return 'Detalles del desarrollador'. $develops;
  Route::get('/posts',[PostController::class,'index'])->name('posts.index');
 //Ruta personalizada para crear el registro en la BD de Possts
  Route::post('/posts',[PostController::class,'store'])->name('posts.store');
+//Ruta personaliizada para Actualizar registro
+ Route::get('/posts/{post}/edit',[PostController::class,'edit'])->name('posts.edit');
 
+//Ruta para actualizar
+ Route::patch('/posts/{post}',[PostController::class,'update'])->name('posts.update');
+//Ruta para eliminar
+Route::delete('/posts/{post}',[PostController::class,'destroy'])->name('posts.destroy');
 
 require __DIR__.'/auth.php';

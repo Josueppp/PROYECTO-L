@@ -1,5 +1,5 @@
 @if (session('status'))
-<div class="bg-green-600 text-green-100 text-center text-lg font-bold p-2">{{ session('status')}}</div>
+<div class="bg-teal-600 text-indigo-900 text-center text-lg font-bold p-2">{{ session('status')}}</div>
 
 
 @endif

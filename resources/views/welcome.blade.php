@@ -3,11 +3,6 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <div class="mb-6 p-6 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-lg shadow-lg">
-                <h2 class="text-2xl font-bold text-center">🎉 Bienvenido a BISON 🎉</h2>
-                <p class="text-center mt-2">Comparte tus pensamientos con la comunidad.</p>
-            </div>
-        <title>Laravel</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
