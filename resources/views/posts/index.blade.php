@@ -68,7 +68,7 @@
                                 {{-- Utilizando operadores de control comparativo--}}
                                 @unless($post->created_at->eq($post->updated_at))
                                 <small class="ml-2 text-sm text-gray-600 dark:text-gray-400">
-                                    &middot; {{ __('Edited') }}
+                                    &middot; {{__('Edited') }}
                                 </small>
                             @endunless
 

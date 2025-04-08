@@ -70,7 +70,7 @@ class PostController extends Controller
         
         //return view ('posts/edit', compact('post'));
         $this->authorize('update',$post);
-        return view('posts/edit',[
+        return view('posts.edit',[
             'post'=> $post,
         ]);
         
