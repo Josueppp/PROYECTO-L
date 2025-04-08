@@ -2,9 +2,9 @@
 
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Post;
 use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
-use App\Models\Post;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,10 +20,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/welcome2','Welcome',)->name( 'Welcome');
+Route::view('/welcome2','welcome',)->name( 'welcome');
 
 Route::get('develop', function(){
-    return 'welcome to Developments';
+    return 'Welcome to Developments';
     })->name('develop.index');
 
 Route::get('/develop/{develops}',function($develops){
