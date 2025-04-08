@@ -88,7 +88,7 @@
 </button>
                         </x-slot>
                         <x-slot  name="content">
-                            <x-dropdown-link :href="route('posts.edit',$post->id)">{{_('Edit') }}</x-dropdown-link>
+                            <x-dropdown-link :href="route('posts.edit',$post->id)">{{__('Edit') }}</x-dropdown-link>
                           
                             {{-- -Esto es eliminar Directamente --}}
                         <!-- <form action="{{route('posts.destroy',$post)}}" method="POST">
@@ -104,7 +104,7 @@
                             @method('DELETE')
                             {{-- -Crear el button para abrir el modal --}}
                             <x-dropdown-link href="#" x-on:click.stop.prevent="showConfirm = true">
-                                {{ _('Delete') }}
+                                {{__('Delete') }}
 
                             </x-dropdown-link>
                             </form>
