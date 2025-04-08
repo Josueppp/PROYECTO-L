@@ -68,7 +68,7 @@
                                 {{-- Utilizando operadores de control comparativo--}}
                                 @unless($post->created_at->eq($post->updated_at))
                                 <small class="ml-2 text-sm text-gray-600 dark:text-gray-400">
-                                    &middot; {{ _('Edited') }}
+                                    &middot; {{ __('Edited') }}
                                 </small>
                             @endunless
 
@@ -114,10 +114,10 @@
                                                                  justify-center bg-black/50 p-4" x-on:click="showConfirm=false">
                             <div class="bg-white dark:bg-gray-800 p-6 rounded-lg w-75">
                                     <h2 class="bg-white font-semibold text-gray-900 dark:text-gray-900">
-                                        {{ _('Are you sure you want to delete this post?') }}
+                                        {{__('Are you sure you want to delete this post?') }}
                                     </h2>
                                     <p class="text-gray-600 dark:text-gray-300 mt-2 text-sm">
-                                        {{__ ('This action cannt be undone!')}}
+                                        {{__('This action cannt be undone!')}}
                                     </p>
                         {{-- -Botones de confimacion y cancelacion --}}
                         <div class="mt-4 flex justify-end space-x-2">

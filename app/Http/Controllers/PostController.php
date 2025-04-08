@@ -47,7 +47,7 @@ class PostController extends Controller
     //     'message' => $request->get('message')
     // ]);
     $request->user()->posts()->create($dataValidates);
-        return to_route('posts.index')->with('status',_('Post created sucessfully!'));
+        return to_route('posts.index')->with('status',__('Post created sucessfully!'));
     }
 
     /**
@@ -88,7 +88,7 @@ class PostController extends Controller
         ]);
         $post->UPDATE($dataValidates);
 
-        return to_route('posts.index')->with('status',_('Post update sucessfully'));
+        return to_route('posts.index')->with('status',__('Post update sucessfully'));
 
     }
 
