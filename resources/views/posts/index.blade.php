@@ -138,13 +138,13 @@
                     </x-slot>
 
                      </x-dropdown>
-                     <!-- @endif -->
+                     <!-- @endif --> 
                      @endcan
                 </div>
             </div>
    
     @endforeach
-    {{-- -Aqui terminan los post --}}
+    {{-- -Aqui terminan los post LL --}}
       </div>
     </div>
 </x-app-layout>
