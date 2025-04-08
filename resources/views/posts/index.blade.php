@@ -25,7 +25,7 @@
                             focus:border-indigo-200 focus:ring focus:ring-green-400 focus:ring-opacity-50 dark:border-gray-600
                             dark:bg-gray-800 dark:text-white dark:focus:border-indigo-300 dark:focus:ring dark:focus:ring-indigo-200
                             dark:focus:ring-opacity-50"
-                            placeholder="{{ _('¿Qué estás pensando?') }}">{{ old('message') }}</textarea>
+                            placeholder="{{__('¿Qué estás pensando?') }}">{{ old('message') }}</textarea>
 
                         <x-input-error :messages="$errors->get('message')"></x-input-error>
 
