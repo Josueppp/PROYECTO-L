@@ -30,7 +30,7 @@
                         <x-input-error :messages="$errors->get('message')"></x-input-error>
 
                         <x-primary-button class="mt-6 w-full bg-indigo-600 hover:bg-teal-700 text-white py-2 rounded-md">
-                            {{ _("Publicar") }}
+                            {{__("Publicar") }}
                         </x-primary-button>
                     </form>
                 </div>
